@@ -1,0 +1,204 @@
+body, html,form {
+	padding:0;
+	margin:0;
+	padding:0px;
+	height:100%;
+}
+body {  
+	background-color: #000; 
+	background-image: url("../img/cover.png"); 
+	background-repeat: no-repeat;
+	background-position: center bottom; 
+	background-size:cover;
+}
+
+h2 {
+	margin-bottom: 0;
+}
+
+.logo {
+	float:left;
+	position:relative;
+	margin:50px 0 0 50px;
+}
+#pergunta0 span{
+	position:relative;
+	float: left;
+	display: block;
+	padding-top: 100px;
+	padding-right: 20px;
+	line-height: 36px;
+	font-size: 24px;
+	width:50%;
+}
+#pergunta0 .button {
+	display:inline-block;
+	padding:2px 20px;
+	margin: 35px 100px 0 0;
+	background-color: transparent;
+	border-top: 3px solid black;
+	border-left: 3px solid black;
+	border-right: 3px solid black;
+	border-bottom: 3px solid black;
+	font-family:"wc_mano_negra_btaregular",Georgia,serif; 
+	font-size:3rem;
+	cursor:pointer;
+	transition: border 0.2s linear 0.2s;
+
+}	
+#pergunta0 .button:hover {
+
+	border-top: 5px solid rgb(227,100,5);
+	border-left: 5px solid rgb(227,100,5);
+	border-right: 5px solid rgb(227,100,5);
+	border-bottom: 5px solid rgb(227,100,5);
+	transition: border 0.2s linear 0.2s;
+}
+.ui-autocomplete {
+	max-height:200px; overflow:auto;
+}
+.sedas {display: block; margin:0 auto; width:800px;}
+.sedas ul li {
+	width:200px;
+	margin:0;
+	background-color: #777;
+	color: #fff;
+	height:170px;
+	display: block;
+	position: relative;
+	float: left;
+	cursor: pointer;
+	opacity:0.8;
+	transition: all 0.5s;
+}
+.sedas ul li p { position:absolute; bottom:0; width:90%; margin:0; padding:5%; background-color: #555; min-height: 0px; font-weight: bold;}
+
+.sedas ul li img { width:100%; margin:20px 0;
+	}
+.sedas ul li:hover {
+	opacity:1;
+	transition: all 0.5s;
+}
+.sedas ul li.selected {
+	opacity:1;
+	transition: all 0.5s;background-color: rgb(227,100,5);
+}
+.horas-dia {display:block; margin: 0 auto; width:750px; }
+.horas-dia ul li { 
+	width:20%; 
+	border-radius:0; 
+	padding:2%; 
+	line-height: 2rem;
+	margin:0.5%;
+	opacity:0.8;
+	background-color: #666;
+	display:block;
+	color:#ddd;
+	float:left; 
+	position:relative; 
+	cursor:pointer;
+	transition: all 0.5s;
+	font-size:2rem;
+}
+.horas-dia ul li:hover {
+	opacity:1;
+	transition: all 0.5s; }
+.horas-dia li.selected { 
+	opacity:1;background-color: #e36405;}
+
+.dias-semana { display:block;  margin: 0 auto; width:650px; height:75px;}
+.dias-semana ul li { 
+	width:2rem; 
+	height:2rem; 
+	border-radius:3.6rem; 
+	padding:1.8rem; 
+	line-height: 2rem;
+	margin:0.5rem;
+	opacity:0.8;
+	background-color: #666;
+	display:block;
+	color:#ddd;
+	float:left; 
+	position:relative; 
+	cursor:pointer;
+	transition: all 0.5s;
+	font-size:2rem;
+}
+.dias-semana ul li:hover {color:white; transition: all 0.5s; text-shadow:0 0 5px #000,
+				-3px -3px 15px #000,
+				3px -3px 15px #000,
+				-3px 3px 15px #000,
+				3px 3px 15px #000; 
+			}
+.dias-semana li.selected { background-color: #000; 
+	opacity:1;}
+
+.container { text-align: center; 
+	box-shadow: 0 0 20px #000; 
+	position: absolute;
+	top:50%;
+	margin-top:-230px;  
+	background:rgba(255,255,255,0.9);
+	width:100%; 
+	height:460px; 
+}
+
+.form-quiz { max-width:900px; margin:0 auto; display:inline-block;}
+
+* { font-family: 'Quicksand', sans-serif; }
+.pergunta h2 { font-family:"wc_mano_negra_btaregular",Georgia,serif; font-size:4rem; }
+
+input[type="text"] { 
+	font-size:2.5rem; 
+	border:1px solid #ccc; 
+	padding: 1rem; 
+	box-shadow: 0 0 0px #000;	
+	display:block;
+	margin:0 auto;
+
+}
+
+input[type="text"]:focus
+{
+	border:1px solid #aaa; 
+} 
+
+
+a.next {
+	width:128px;
+	height:128px;
+	display:block;
+	float:right;
+	margin-right:150px;
+	top:-90px;
+}
+a.prev {
+	width:128px;
+	height:128px;
+	display:block;
+	float:left;
+	margin-left:150px;
+	top:-90px;
+}
+@keyframes piscapisca {
+	0% {opacity:0;}
+	10% {opacity:0;}
+	100% { opacity:1;}
+}
+@keyframes giragira {
+	0% {transform:rotate(0deg);}
+	100% {transform:rotate(360deg);}
+}
+.enviandocoxinhas {
+	border-radius: 110px;
+	overflow:hidden;
+	background-image: url("../img/aiquefome.png");
+	background-size: 100%;
+	width:200px;
+	height:200px;
+	border:5px solid #000;
+	margin:0 auto;
+}
+.pisca-pisca {
+		animation: piscapisca 1s ease 0s infinite alternate, giragira 2s ease 2s infinite normal;
+}
