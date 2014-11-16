@@ -51,13 +51,13 @@
 				<h4>Escolha quantos dias quiser. Quando você vai querer salgados deliciosos?</h4>
 				<div class="dias-semana">
 					<ul id="multipla_1">
-						<li id="multipla_1_domingo" alt="Domingo" title="Domingo">D</li>
-						<li id="multipla_1_segunda">S</li>
-						<li id="multipla_1_terça">T</li>
-						<li id="multipla_1_quarta">Q</li>
-						<li id="multipla_1_quinta">Q</li>
-						<li id="multipla_1_sexta">S</li>
-						<li id="multipla_1_sabado">S</li>
+						<li id="multipla_1_domingo" alt="Domingo" title="Domingo">D<span>Domingo</span></li>
+						<li id="multipla_1_segunda" alt="Segunda-Feira" title="Segunda-Feira">S<span>Segunda</span></li>
+						<li id="multipla_1_terça" alt="Terça-Feira" title="Terça-Feira">T<span>Terça</span></li>
+						<li id="multipla_1_quarta" alt="Quarta-Feira" title="Quarta-Feira">Q<span>Quarta</span></li>
+						<li id="multipla_1_quinta" alt="Quinta-Feira" title="Quinta-Feira">Q<span>Quinta</span></li>
+						<li id="multipla_1_sexta" alt="Sexta-Feira" title="Sexta-Feira">S<span>Sexta</span></li>
+						<li id="multipla_1_sabado" alt="Sábado" title="Sábado">S<span>Sábado</span></li>
 					</ul>
 				</div>
 				<input id="multipla_1_hidden" type="hidden">
@@ -186,7 +186,13 @@
 		//	$('.form-quiz').slickGoTo(3);
 		}else{
 			console.log($("#formquiz").serialize());
-			$.post( "insert.php", $("#formquiz").serialize() );
+
+            //FORM NÃO TA ENVIANDO NADA PELO AJAX
+            // $("#formquiz").serialize() não ta trazendo nada O_o
+
+			$.post( "insert.php", $("#formquiz").serialize(), function(data) {
+                console.log(data);
+            });
 		}
 	}
 

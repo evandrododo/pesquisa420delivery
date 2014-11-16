@@ -89,7 +89,7 @@ h2 {
 	border-radius:0; 
 	padding:2%; 
 	line-height: 2rem;
-	margin:0.5%;
+	margin:0.3%;
 	opacity:0.8;
 	background-color: #666;
 	display:block;
@@ -98,7 +98,7 @@ h2 {
 	position:relative; 
 	cursor:pointer;
 	transition: all 0.5s;
-	font-size:2rem;
+	font-size:1.6rem;
 }
 .horas-dia ul li:hover {
 	opacity:1;
@@ -108,12 +108,12 @@ h2 {
 
 .dias-semana { display:block;  margin: 0 auto; width:650px; height:75px;}
 .dias-semana ul li { 
-	width:2rem; 
-	height:2rem; 
-	border-radius:3.6rem; 
-	padding:1.8rem; 
-	line-height: 2rem;
-	margin:0.5rem;
+	width:1.6rem;
+	height:1.6rem;
+	border-radius:4rem;
+	padding:1.4rem;
+	line-height: 1.6rem;
+	margin:0.3rem;
 	opacity:0.8;
 	background-color: #666;
 	display:block;
@@ -122,7 +122,7 @@ h2 {
 	position:relative; 
 	cursor:pointer;
 	transition: all 0.5s;
-	font-size:2rem;
+	font-size:1.6rem;
 }
 .dias-semana ul li:hover {color:white; transition: all 0.5s; text-shadow:0 0 5px #000,
 				-3px -3px 15px #000,
@@ -131,7 +131,27 @@ h2 {
 				3px 3px 15px #000; 
 			}
 .dias-semana li.selected { background-color: #000; 
-	opacity:1;}
+	opacity:1;
+    background-color: #e36405;
+}
+
+.dias-semana ul li span{
+    display: block;
+    position: absolute;
+    color:transparent;
+    top: 140%;
+    left:-10%;
+}
+.dias-semana ul li:hover span{
+    color:white;
+}
+.dias-semana ul li.selected:hover {
+    text-shadow:0 0 5px rgb(227,100,5),
+				-3px -3px 15px rgb(227,100,5),
+				3px -3px 15px rgb(227,100,5),
+				-3px 3px 15px rgb(227,100,5),
+				3px 3px 15px rgb(227,100,5);
+}
 
 .container { text-align: center; 
 	box-shadow: 0 0 20px #000; 

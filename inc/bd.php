@@ -3,7 +3,7 @@ class Conexao {
 	var $host = "localhost";
 	var $usuario = "root";
 	var $senha = "";
-	var $banco = "420quiz";
+	var $banco = "420d";
 
 	public $mysqli;
 	
