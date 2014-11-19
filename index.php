@@ -43,7 +43,7 @@
 				<h2>Em que cidade você mora?</h2>
 				<h4>&nbsp;</h4>
 				<span class="ui-helper-hidden-accessible" role="status" aria-live="polite"></span>
-				<input id="text_0" class="ui-autocomplete-input" type="text" autocomplete="off">
+				<input id="text_0" name="cidade" class="ui-autocomplete-input" type="text" autocomplete="off">
 			</div>
 
 			<div class="pergunta" id= "pergunta2 ">
@@ -60,7 +60,7 @@
 						<li id="multipla_1_sabado" alt="Sábado" title="Sábado">S<span>Sábado</span></li>
 					</ul>
 				</div>
-				<input id="multipla_1_hidden" type="hidden">
+				<input id="multipla_1_hidden" name="dias_semana" type="hidden">
 			</div>
 
 			<div class="pergunta" id= "pergunta<?php echo $Quiz->getIndiceQuestao; ?> ">
@@ -74,7 +74,7 @@
 					<li id="multipla_2_madrugada"><i class="wi wi-stars"></i><br> Madrugada</li>
 				</ul>
 				</div>
-				<input id="multipla_2_hidden" type="hidden">
+				<input id="multipla_2_hidden" name="periodo" type="hidden">
 			</div>
 
 			<div class="pergunta" id= "pergunta<?php echo $Quiz->getIndiceQuestao; ?> ">
@@ -185,11 +185,6 @@
 			alert("Escolha a hora que dá mais fome!");
 		//	$('.form-quiz').slickGoTo(3);
 		}else{
-			console.log($("#formquiz").serialize());
-
-            //FORM NÃO TA ENVIANDO NADA PELO AJAX
-            // $("#formquiz").serialize() não ta trazendo nada O_o
-
 			$.post( "insert.php", $("#formquiz").serialize(), function(data) {
                 console.log(data);
             });
@@ -197,7 +192,7 @@
 	}
 
 	var selecionados = new Array();
-	function clickMultipla(id_ul, minima, maxima)
+	function clickMultipla(id_ul, id_input, minima, maxima)
 	{
 		selecionados[id_ul] = new Array();
 		if (id_ul === undefined) return false;;
@@ -221,12 +216,15 @@
     			selecionados[id_ul].splice(index_item,1);
     		}
     		console.log(selecionados[id_ul]);
+
+            //Coloca os selecionados no input
+            $("#"+id_input).val(selecionados[id_ul].join(","));
     	});
 	}
 
-	clickMultipla('multipla_1',1,7);
-	clickMultipla('multipla_2',1,2);
-	clickMultipla('sedas_ul',1,5);
+	clickMultipla('multipla_1','multipla_1_hidden',1,7);
+	clickMultipla('multipla_2','multipla_2_hidden',1,2);
+	clickMultipla('sedas_ul','sedas_hidden',1,5);
 </script>
 <script type="text/javascript" src="inc/slick/slick.min.js"/></script>
 </body>
