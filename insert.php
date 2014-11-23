@@ -1,6 +1,7 @@
 <?php
     require_once "inc/bd.php";
 
+/*
     $cidade = $_REQUEST['cidade'];
     $dias_semana = explode(",",$_REQUEST['dias_semana']);
     $periodos = explode(",",$_REQUEST['periodo']);
@@ -12,5 +13,5 @@
         echo "inserido";
     }else{
         echo "erro";
-    }
+    }*/
 ?>

@@ -15,6 +15,7 @@ class Conexao {
 		$this->mysqli->close();
 	}
 }
+
 class Comando {
 	public function executar($sql) {
 		$con = new Conexao();
