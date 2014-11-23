@@ -11,7 +11,7 @@ use Facebook\FacebookRedirectLoginHelper;
 session_start();
 $session = FacebookSession::setDefaultApplication('225836800874912', '3789aa92507bc07715212a3e6070765a');
 
-$helper = new FacebookRedirectLoginHelper('http://'.$_SERVER['SERVER_NAME'].'/facebook_login.php?submitted=1 ');
+$helper = new FacebookRedirectLoginHelper('http://'.$_SERVER['SERVER_NAME'].'/dev/420/pesquisa/pesquisa420delivery/facebook_login.php?submitted=1 ');
 $loginUrl = $helper->getLoginUrl();
 // Use the login url on a link or button to redirect to Facebook for a
 
