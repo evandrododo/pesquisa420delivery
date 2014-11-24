@@ -21,8 +21,9 @@ class Comando {
 		$con = new Conexao();
 		$con->abrir();
 		$re = $con->mysqli->query($sql);
+        $id_insert = $con->mysqli->insert_id;
 		$con->fechar();
-		return $re;
+		return $id_insert;
 	}
 }
 ?>
