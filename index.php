@@ -13,7 +13,6 @@ session_start();
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <link rel="stylesheet" href="css/style.css">
 
     <link rel="icon" href="img/favicon-16.png" sizes="16x16">
     <link rel="icon" href="img/favicon-32.png" sizes="32x32">
@@ -35,6 +34,7 @@ session_start();
 	<!-- Slick slider -->
 	<link rel="stylesheet" type="text/css" href="inc/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="inc/weather-icons/css/weather-icons.css"/>
+    <link rel="stylesheet" href="css/style.css">
   </head>
 
 	<body>
@@ -98,16 +98,14 @@ session_start();
 			<div class="pergunta" id= "pergunta4">
 				<h2>Qual sua seda preferida?</h2>
 				<div class='slider-wrapper' style='position:relative; height:100px;'>
-					<?php include 'slider.php'; ?>
+					<?php include("slider_interno.php"); ?>
 				</div>
-				</div><!-- fechando div imaginaria problematica!  -->
 			</div>
 			<div class="pergunta" id= "tela_final">
 				<h2>Enviando preferências...</h2>
 				<div class="pisca-pisca enviandocoxinhas"></div>
                 <div class="facebook-wrapper">
                   <div class="fb-like-box" data-href="https://www.facebook.com/420deliverybauru" data-width="395" data-height="180" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div>
-
                 </div>
 			</div>
 		</div>
