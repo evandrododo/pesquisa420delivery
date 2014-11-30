@@ -7,21 +7,23 @@ class Conexao {
 
 	public $mysqli;
 	
-	public function Abrir()	{
+	public function abrir()	{
 	$this->mysqli = new mysqli($this->host, $this->usuario, $this->senha, $this->banco);
 	}
 
-	public function Fechar() {
+	public function fechar() {
 		$this->mysqli->close();
 	}
 }
+
 class Comando {
-	public function Executar($sql) {
+	public function executar($sql) {
 		$con = new Conexao();
-		$con->Abrir(); 
+		$con->abrir();
 		$re = $con->mysqli->query($sql);
-		$con->Fechar();
-		return $re;
+        $id_insert = $con->mysqli->insert_id;
+		$con->fechar();
+		return $id_insert;
 	}
 }
 ?>

@@ -1,38 +1,52 @@
+<?php
+session_start();
+
+
+?>
 <!doctype html>
 
-	<html lang="pt-br">
-	<head>
-		<meta charset="utf-8">
+  <html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
 
-		<title>420delivery Quiz - Queremos sua opinião!</title>
-		<meta name="description" content="">
-		<meta name="author" content="">
+    <title>420delivery Quiz - Queremos sua opinião!</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-		<link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 
-		<link rel="icon" href="img/favicon-16.png" sizes="16x16">
-		<link rel="icon" href="img/favicon-32.png" sizes="32x32">
+    <link rel="icon" href="img/favicon-16.png" sizes="16x16">
+    <link rel="icon" href="img/favicon-32.png" sizes="32x32">
 
-		<link href="inc/jqueryui/css/ui-lightness/jquery-ui-1.10.4.css" rel="stylesheet">
-		
-		<link rel="stylesheet" href="css/fonts/wcmanonegrabta_regular_macroman/stylesheet.css" type="text/css" charset="utf-8" />
-		<link href='http://fonts.googleapis.com/css?family=Quicksand:400,700' rel='stylesheet' type='text/css'>
+    <link href="inc/jqueryui/css/ui-lightness/jquery-ui-1.10.4.css" rel="stylesheet">
 
-		<script src="inc/jqueryui/js/jquery-1.10.2.js"></script>
-		<script src="inc/jqueryui/js/jquery-ui-1.10.4.js"></script>
+    <link rel="stylesheet" href="css/fonts/wcmanonegrabta_regular_macroman/stylesheet.css" type="text/css" charset="utf-8" />
+    <link href='http://fonts.googleapis.com/css?family=Quicksand:400,700' rel='stylesheet' type='text/css'>
 
-		<!-- Aqui incluo os JS necessarios para o slider das sedas -->
-		<script type="text/javascript" src="inc/jssor/functions.js"></script>
-	    <script type="text/javascript" src="inc/jssor/jssor.core.js"></script>
-	    <script type="text/javascript" src="inc/jssor/jssor.utils.js"></script>
-	    <script type="text/javascript" src="inc/jssor/jssor.slider.js"></script>
+	<script src="inc/jqueryui/js/jquery-1.10.2.js"></script>
+	<script src="inc/jqueryui/js/jquery-ui-1.10.4.js"></script>
 
-		<link rel="stylesheet" type="text/css" href="inc/slick/slick.css"/>
-		<link rel="stylesheet" type="text/css" href="inc/weather-icons/css/weather-icons.css"/>
-
-	</head>
+	<!-- Aqui incluo os JS necessarios para o slider das sedas -->
+	<script type="text/javascript" src="inc/jssor/functions.js"></script>
+    <script type="text/javascript" src="inc/jssor/jssor.core.js"></script>
+    <script type="text/javascript" src="inc/jssor/jssor.utils.js"></script>
+    <script type="text/javascript" src="inc/jssor/jssor.slider.js"></script>
+	
+	<!-- Slick slider -->
+	<link rel="stylesheet" type="text/css" href="inc/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="inc/weather-icons/css/weather-icons.css"/>
+  </head>
 
 	<body>
+      <div id="fb-root"></div>
+      <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&appId=225836800874912&version=v2.0";
+      fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+
 	<div class="container">
 		<form action="index.php"  method="post" class="" id="formquiz">
 		<div class="form-quiz">
@@ -47,10 +61,10 @@
 				<h2>Em que cidade você mora?</h2>
 				<h4>&nbsp;</h4>
 				<span class="ui-helper-hidden-accessible" role="status" aria-live="polite"></span>
-				<input id="text_0" class="ui-autocomplete-input" type="text" autocomplete="off">
+				<input id="text_0" name="cidade" class="ui-autocomplete-input" type="text" autocomplete="off">
 			</div>
 
-			<div class="pergunta" id= "pergunta2 ">
+			<div class="pergunta" id= "pergunta2">
 				<h2>Em que dia bate a larica forte?</h2>
 				<h4>Escolha quantos dias quiser. Quando você vai querer salgados deliciosos?</h4>
 				<div class="dias-semana">
@@ -64,7 +78,7 @@
 						<li id="multipla_1_sabado" alt="Sábado" title="Sábado">S<span>Sábado</span></li>
 					</ul>
 				</div>
-				<input id="multipla_1_hidden" type="hidden">
+				<input id="multipla_1_hidden" name="dias_semana" type="hidden">
 			</div>
 
 			<div class="pergunta" id= "pergunta3">
@@ -78,7 +92,7 @@
 					<li id="multipla_2_madrugada"><i class="wi wi-stars"></i><br> Madrugada</li>
 				</ul>
 				</div>
-				<input id="multipla_2_hidden" type="hidden">
+				<input id="multipla_2_hidden" name="periodo" type="hidden">
 			</div>
 
 			<div class="pergunta" id= "pergunta4">
@@ -87,12 +101,14 @@
 					<?php include 'slider.php'; ?>
 				</div>
 				</div><!-- fechando div imaginaria problematica!  -->
-
 			</div>
-
-			<div class="pergunta" id= "pergunta5">
+			<div class="pergunta" id= "tela_final">
 				<h2>Enviando preferências...</h2>
 				<div class="pisca-pisca enviandocoxinhas"></div>
+                <div class="facebook-wrapper">
+                  <div class="fb-like-box" data-href="https://www.facebook.com/420deliverybauru" data-width="395" data-height="180" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div>
+
+                </div>
 			</div>
 		</div>
 		</form>
@@ -144,28 +160,33 @@
 		// var sedas = selecionados['sedas_ul'];  //todo: adaptar para slider vertical
 		if(!cidade.trim()){
 			alert("Selecione uma cidade!");
+            $("#tela_final h2").html("Selecione uma cidade!");
 			//a ideia é mandar de volta pro slide, mas nao funfa :(
-			$('.form-quiz').slickGoTo(1);
+		//	$('.form-quiz').slickGoTo(1);
 		}else if(dias.length < 1){
 			alert("Escolha ao menos um dia!");
+            $("#tela_final h2").html("Escolha pelo menos um dia!");
 		//	$('.form-quiz').slickGoTo(2);
 		}else if(horas.length < 1){
 			alert("Escolha a hora que dá mais fome!");
+            $("#tela_final h2").html("Escolha a hora que dá mais fome!");
 		//	$('.form-quiz').slickGoTo(3);
 		}else{
-			console.log($("#formquiz").serialize());
-
-            //FORM NÃO TA ENVIANDO NADA PELO AJAX
-            // $("#formquiz").serialize() não ta trazendo nada O_o
-
-			$.post( "insert.php", $("#formquiz").serialize(), function(data) {
-                console.log(data);
-            });
+          $("#tela_final h2").html("Enviando...");
+          $.post( "insert.php", $("#formquiz").serialize(), function(data) {
+            console.log(data);
+            if( data == "inserido") {
+              $("#tela_final h2").html("Gratidão!");
+              $(".pisca-pisca").removeClass("pisca-pisca");
+            }else if(data == "erro") {
+              $("#tela_final h2").html("Ocorreu um erro :(");
+            };
+          });
 		}
 	}
 
 	var selecionados = new Array();
-	function clickMultipla(id_ul, minima, maxima)
+	function clickMultipla(id_ul, id_input, minima, maxima)
 	{
 		selecionados[id_ul] = new Array();
 		if (id_ul === undefined) return false;;
@@ -189,12 +210,18 @@
     			selecionados[id_ul].splice(index_item,1);
     		}
     		console.log(selecionados[id_ul]);
+
+            //Coloca os selecionados no input
+            $("#"+id_input).val(selecionados[id_ul].join(","));
     	});
 	}
 
 	clickMultipla('multipla_1',1,7);
 	clickMultipla('multipla_2',1,2);
-	// clickMultipla('sedas_ul',1,5);  //todo: adaptar para slider vertical
+	clickMultipla('sedas_ul',4,4);  //todo: adaptar para slider vertical
+	clickMultipla('sedas_ul2',4,4);  //todo: adaptar para slider vertical
+	clickMultipla('sedas_ul3',4,4);  //todo: adaptar para slider vertical
+
 </script>
 <script type="text/javascript" src="inc/slick/slick.min.js"/></script>
 </body>

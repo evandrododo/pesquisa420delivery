@@ -65,7 +65,17 @@
                         </li>
                     </ul>
             </div>
-        <style>
+         <style>   
+         /* css das arrows do slider vertical*/
+            /* jssor slider arrow navigator skin 08 css */
+            /*
+            .jssorb08l              (normal)
+            .jssorb08r              (normal)
+            .jssorb08l:hover        (normal mouseover)
+            .jssorb08r:hover        (normal mouseover)
+            .jssorb08ldn            (mousedown)
+            .jssorb08rdn            (mousedown)
+            */
             .jssorb08l, .jssorb08r, .jssorb08ldn, .jssorb08rdn
             {
             	position: absolute;
@@ -77,16 +87,16 @@
             }
             .jssorb08l { background-position: -5px -35px; }
             .jssorb08r { background-position: -65px -35px; }
-            .jssorb08l:hover { background-position: -5px -35px; opacity: .8; filter:alpha(opacity=80); }
+            .jssorb08l:hover { background-position: -5px -35px; opacity: .8; filter:alpha(opacity=800px); }
             .jssorb08r:hover { background-position: -65px -35px; opacity: .8; filter:alpha(opacity=80); }
             .jssorb08ldn { background-position: -5px -35px; opacity: .3; filter:alpha(opacity=30); }
             .jssorb08rdn { background-position: -65px -35px; opacity: .3; filter:alpha(opacity=30); }
         </style>
         <!-- Arrow Left -->
-        <span u="arrowleft" class="jssorb08l" style="width: 50px; height: 50px; top: 8px; left: 42%;">
+        <span u="arrowleft" class="jssorb08l" style="width: 50px; height: 50px; top: 10px; left: 42.5%!important">
         </span>
         <!-- Arrow Right -->
-        <span u="arrowright" class="jssorb08r" style="width: 50px; height: 50px; bottom: 8px; left: 42%">
+        <span u="arrowright" class="jssorb08r" style="width: 50px; height: 50px; bottom:10px; left: 42.5%!important">
         </span>
         <!-- Arrow Navigator Skin End -->
         <a style="display: none" href="http://www.jssor.com">javascript</a>
