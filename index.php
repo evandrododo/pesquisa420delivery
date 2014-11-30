@@ -184,6 +184,7 @@ session_start();
 	}
 
 	var selecionados = new Array();
+
 	function clickMultipla(id_ul, id_input, minima, maxima)
 	{
 		selecionados[id_ul] = new Array();
@@ -216,9 +217,7 @@ session_start();
 
 	clickMultipla('multipla_1',1,7);
 	clickMultipla('multipla_2',1,2);
-	clickMultipla('sedas_ul',4,4);  //todo: adaptar para slider vertical
-	clickMultipla('sedas_ul2',4,4);  //todo: adaptar para slider vertical
-	clickMultipla('sedas_ul3',4,4);  //todo: adaptar para slider vertical
+	clickMultipla('sedas_div',1,40);  //todo: adaptar para slider vertical
 
 </script>
 <script type="text/javascript" src="inc/slick/slick.min.js"/></script>

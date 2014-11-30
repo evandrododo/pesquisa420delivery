@@ -2,9 +2,9 @@
 <!-- You can move inline styles to css file or css block. -->
 <div id="slider_sedas_container">
   <!-- Slides Container -->
-  <div u="slides" class="slides-container" style="cursor: move; position: absolute; left: 65px; top: 0px; width: 800px; height: 190px;overflow: hidden;">
-    <div class="sedas">
-      <ul id="sedas_ul">
+  <div u="slides" class="slides-container" style="cursor: move; position: absolute; left: 65px; top: 0px; width: 800px; height: 170px;overflow: hidden;">
+    <div class="sedas" id="sedas_div">
+      <ul id="sedas_ul" class="sedas_ul">
         <li id="multipla_3_ks_deluxe">
           <img src="./img/sedas/ks_deluxe.png">
           <p>Smoking King Size Deluxe</p>
@@ -24,7 +24,7 @@
       </ul>
     </div>
     <div class="sedas">
-      <ul id="sedas_ul2">
+      <ul id="sedas_ul2" class="sedas_ul">
         <li id="multipla_3_ks_brown">
           <img src="./img/sedas/ks_brown.png">
           <p>Smoking King Size Brown</p>
@@ -44,7 +44,7 @@
       </ul>
     </div>
     <div class="sedas">
-      <ul id="sedas_ul3">
+      <ul id="sedas_ul3" class="sedas_ul">
         <li id="multipla_3_ks_brown">
           <img src="./img/sedas/ks_brown.png">
           <p>Smoking King Size Brown</p>
