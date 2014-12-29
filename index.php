@@ -69,13 +69,13 @@ session_start();
 				<h4>Escolha quantos dias quiser. Quando você vai querer salgados deliciosos?</h4>
 				<div class="dias-semana">
 					<ul id="multipla_1">
-						<li id="multipla_1_domingo" alt="Domingo" title="Domingo">D<span>Domingo</span></li>
-						<li id="multipla_1_segunda" alt="Segunda-Feira" title="Segunda-Feira">S<span>Segunda</span></li>
-						<li id="multipla_1_terça" alt="Terça-Feira" title="Terça-Feira">T<span>Terça</span></li>
-						<li id="multipla_1_quarta" alt="Quarta-Feira" title="Quarta-Feira">Q<span>Quarta</span></li>
-						<li id="multipla_1_quinta" alt="Quinta-Feira" title="Quinta-Feira">Q<span>Quinta</span></li>
-						<li id="multipla_1_sexta" alt="Sexta-Feira" title="Sexta-Feira">S<span>Sexta</span></li>
-						<li id="multipla_1_sabado" alt="Sábado" title="Sábado">S<span>Sábado</span></li>
+						<li id="domingo" alt="Domingo" title="Domingo">D<span>Domingo</span></li>
+						<li id="segunda" alt="Segunda-Feira" title="Segunda-Feira">S<span>Segunda</span></li>
+						<li id="terça" alt="Terça-Feira" title="Terça-Feira">T<span>Terça</span></li>
+						<li id="quarta" alt="Quarta-Feira" title="Quarta-Feira">Q<span>Quarta</span></li>
+						<li id="quinta" alt="Quinta-Feira" title="Quinta-Feira">Q<span>Quinta</span></li>
+						<li id="sexta" alt="Sexta-Feira" title="Sexta-Feira">S<span>Sexta</span></li>
+						<li id="sabado" alt="Sábado" title="Sábado">S<span>Sábado</span></li>
 					</ul>
 				</div>
 				<input id="multipla_1_hidden" name="dias_semana" type="hidden">
@@ -86,10 +86,10 @@ session_start();
 				<h4>Café da manhã dos campeões? Assalto à geladeira de madrugada? Escolha até 2 períodos.	</h4>
 				<div class="horas-dia">
 				<ul id="multipla_2">
-					<li id="multipla_2_manha"><i class="wi wi-day-cloudy"></i><br> Manhã</li>
-					<li id="multipla_2_tarde"><i class="wi wi-day-sunny"></i><br> Tarde</li>
-					<li id="multipla_2_noite"><i class="wi wi-night-clear"></i><br> Noite</li>
-					<li id="multipla_2_madrugada"><i class="wi wi-stars"></i><br> Madrugada</li>
+					<li id="manha"><i class="wi wi-day-cloudy"></i><br> Manhã</li>
+					<li id="tarde"><i class="wi wi-day-sunny"></i><br> Tarde</li>
+					<li id="noite"><i class="wi wi-night-clear"></i><br> Noite</li>
+					<li id="madrugada"><i class="wi wi-stars"></i><br> Madrugada</li>
 				</ul>
 				</div>
 				<input id="multipla_2_hidden" name="periodo" type="hidden">
@@ -155,10 +155,10 @@ session_start();
 		var cidade = $("#text_0").val();
 		var dias = selecionados['multipla_1'];
 		var horas = selecionados['multipla_2'];
-		// var sedas = selecionados['sedas_ul'];  //todo: adaptar para slider vertical
+		// var sedas = sedas_selecionadas;  //todo: adaptar para slider vertical
 		if(!cidade.trim()){
-			alert("Selecione uma cidade!");
-            $("#tela_final h2").html("Selecione uma cidade!");
+			alert("Preencha a cidade!");
+            $("#tela_final h2").html("Preencha a cidade!");
 			//a ideia é mandar de volta pro slide, mas nao funfa :(
 		//	$('.form-quiz').slickGoTo(1);
 		}else if(dias.length < 1){
@@ -208,16 +208,109 @@ session_start();
     			$("#"+selecionados[id_ul][index_item]).removeClass("selected"); //tira a classe do primeiro elemento
     			selecionados[id_ul].splice(index_item,1);
     		}
-    		console.log(selecionados[id_ul]);
 
             //Coloca os selecionados no input
             $("#"+id_input).val(selecionados[id_ul].join(","));
+            
+    		console.log($("#"+id_input).val());
     	});
 	}
+    		var sedas_selecionadas = new Array();
 
-	clickMultipla('multipla_1',1,7);
-	clickMultipla('multipla_2',1,2);
-	clickMultipla('sedas_div',1,40);  //todo: adaptar para slider vertical
+    function clickSedas(id_input, minima, maxima)
+	{
+		if (minima === undefined) minima = 0;
+		if (maxima === undefined) maxima = 1;
+
+        
+		$(".sedas_ul li").click(function(){    		
+
+            if (this.id == "dont_smoke") {
+                //Limpa todas as outras sedas (e deixa só essa selecionada depois)
+                $(".sedas_ul li").removeClass("selected"); 
+                sedas_selecionadas = new Array();
+            } else {     
+                //Limpa a dont_smoke da lista
+                $("#dont_smoke").removeClass("selected");
+                index_item = sedas_selecionadas.indexOf("dont_smoke");
+    			sedas_selecionadas.splice(index_item,1);
+            }
+            
+            //Testa se o item está no array
+			index_item = sedas_selecionadas.indexOf(this.id);
+            console.log(sedas_selecionadas);
+                console.log(this.id+":"+index_item+" ");
+            //Se não está, adiciona
+			if(index_item < 0) 
+			{
+                //Caso tenha sido selecionado acima do máximo, remove o primeiro para ceder lugar ao novo
+				if(sedas_selecionadas.length >= maxima){ 
+	    			$("#"+sedas_selecionadas[0]).removeClass("selected"); //tira a classe do primeiro elemento
+	    			sedas_selecionadas.shift();
+	    		}
+	    		sedas_selecionadas.push(this.id);
+	    		$(this).addClass("selected");
+	    	} else { //Se está no array, tira a classe e remove
+    //			$("#"+sedas_selecionadas[index_item]).removeClass("selected"); //tira a classe do primeiro elemento
+    //			sedas_selecionadas.splice(index_item,1);
+    		}
+
+            //Coloca os selecionados no input
+            $("#"+id_input).val(sedas_selecionadas.join(","));
+            
+    	});
+	}
+    
+    function clickSedas2(id_ul, id_input, minima, maxima)
+	{
+		selecionados[id_ul] = new Array();
+		if (id_ul === undefined) return false;;
+		if (minima === undefined) minima = 0;
+		if (maxima === undefined) maxima = 1;
+		$(".sedas_ul li").click(function(e){
+            if (this.id == "dont_smoke") {
+                //Limpa todas as outras sedas (e deixa só essa selecionada depois)
+                $(".sedas_ul li").removeClass("selected"); 
+                selecionados[id_ul] = new Array();
+            } else {     
+                index_item = selecionados[id_ul].indexOf("dont_smoke");                    
+    			if(index_item >= 0) {                
+                    //Limpa a dont_smoke da lista
+                    $("#dont_smoke").removeClass("selected");
+                    selecionados[id_ul] = new Array();
+                    selecionados[id_ul].splice(index_item,1);
+                }
+            }
+            
+            //Caso tenha clicado no input, não faz nada
+            if (this.id == "outra" && e.target.id == "outra_seda" ) {
+                return;
+            }
+			index_item = selecionados[id_ul].indexOf(this.id) 
+			if(index_item < 0)
+			{
+				if(selecionados[id_ul].length >= maxima){
+	    			$("#"+selecionados[id_ul][0]).removeClass("selected"); //tira a classe do primeiro elemento
+	    			selecionados[id_ul].shift();
+	    		}
+	    		selecionados[id_ul].push(this.id);
+	    		$(this).addClass("selected");
+	    	}
+	    	else
+	    	{
+    			$("#"+selecionados[id_ul][index_item]).removeClass("selected"); //tira a classe do primeiro elemento
+    			selecionados[id_ul].splice(index_item,1);
+    		}
+
+            //Coloca os selecionados no input
+            $("#"+id_input).val(selecionados[id_ul].join(","));
+            
+    		console.log($("#"+id_input).val());
+    	});
+	}
+	clickMultipla('multipla_1','multipla_1_hidden',1,7);
+	clickMultipla('multipla_2','multipla_2_hidden',1,2);
+	clickSedas2('sedas_ul','sedas_hidden',1,40); 
 
 </script>
 <script type="text/javascript" src="inc/slick/slick.min.js"/></script>
