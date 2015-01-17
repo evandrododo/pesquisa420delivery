@@ -2,7 +2,7 @@
 <!-- You can move inline styles to css file or css block. -->
 <div id="slider_sedas_container">
   <!-- Slides Container -->
-  <div u="slides" class="slides-container" style="cursor: move; position: absolute; left: 65px; top: 0px; width: 800px; height: 170px;overflow: hidden;">
+  <div u="slides" class="slides-container" style="cursor: move; position: absolute; left: 65px; top: 0px; width: 880px; height: 170px;overflow: hidden;">
     <div class="sedas" id="sedas_div">
       <ul id="sedas_ul" class="sedas_ul">
         <li id="ks_deluxe">
@@ -55,6 +55,7 @@
         </li>
         <li id="dont_smoke">
           <img src="./img/sedas/dontsmoke.png">
+          <img class="showonselected" src="./img/sedas/dontsmoke-selected.png">
           <p>Não fumo</p>
         </li>
         <li id="outra">
@@ -65,10 +66,10 @@
       </ul>
     </div>
     <!-- Arrow Left -->
-    <span u="arrowleft" class="jssorb08l" style="width: 50px; height: 50px; top: 0px; left: 42.5%!important">
+    <span u="arrowleft" class="jssorb08l" style="width: 50px; height: 50px; top: -15pxpx; left: 48% !important;">
                         </span>
     <!-- Arrow Right -->
-    <span u="arrowright" class="jssorb08r" style="width: 50px; height: 50px; bottom:0px; left: 42.5%!important">
+    <span u="arrowright" class="jssorb08r" style="width: 50px; height: 50px; bottom:-15px; left: 48% !important;">
                         </span>
     <!-- Arrow Navigator Skin End -->
     <a style="display: none" href="http://www.jssor.com">javascript</a>
