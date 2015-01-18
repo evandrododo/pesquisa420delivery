@@ -411,6 +411,30 @@ session_start();
       }
     });
   }  
+  function fb_login(){
+      FB.login(function(response) {
+
+          if (response.authResponse) {
+              console.log('Welcome!  Fetching your information.... ');
+              //console.log(response); // dump complete info
+          
+              logaApp();
+
+          } else {
+              //user hit cancel button
+              console.log('User cancelled login or did not fully authorize.');
+
+          }
+      }, {
+          scope: 'publish_stream,email'
+      });
+  }
+  (function() {
+      var e = document.createElement('script');
+      e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
+      e.async = true;
+      document.getElementById('fb-root').appendChild(e);
+  }());
 </script>
 
 </body>
