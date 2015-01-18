@@ -27,7 +27,7 @@
       <ul id="sedas_ul2" class="sedas_ul">
         <li id="ks_pure_hemp_unbleached">
           <img src="./img/sedas/smoking-pure-hemp-ks_nebelene.png">
-          <p>Pure Hemp Unbleached King Size</p>
+          <p>Pure Hemp Unbleached </p>
         </li>
         <li id="ks_green">
           <img src="./img/sedas/aleda.png">

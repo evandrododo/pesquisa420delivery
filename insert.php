@@ -11,7 +11,7 @@
     $result = $Comando->executar($sql);
     if($result){
       $_SESSION['pesquisa_respondida'] = $result;
-      echo "inserido";
+      echo $result;
     }else{
         echo "erro";
     }

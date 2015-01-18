@@ -268,6 +268,26 @@ a.prev {
     transform: rotate(360deg);
   }
 }
+@keyframes brilha {
+  0% {
+    text-shadow: 2px 2px 10px white,
+        0px 0px 10px white,
+        0px 0px 2px white,
+        0px 0px 10px white,
+        0px 0px 2px white,
+        0px 0px 3px white,
+        0px 0px 4px white;
+  }
+  100% {
+    text-shadow: 2px 2px 10px white,
+        0px 0px 10px white,
+        0px 0px 10px white,
+        0px 0px 10px white,
+        0px 0px 10px white,
+        0px 0px 10px white,
+        0px 0px 10px white;
+  }
+}
 .enviandocoxinhas {
   border-radius: 110px;
   overflow: hidden;
@@ -279,6 +299,20 @@ a.prev {
   margin: 0 5% 0 15%;
   position: relative;
   float: left;
+}
+.enviandocoxinhas a{
+    font-size: 1.4em;
+    text-decoration: none;
+    color:black;
+    margin-top:10px;
+    animation: brilha 1.2s linear 0s infinite alternate;
+    display:block;
+}
+.enviandocoxinhas a span {
+    font-size: 0.65em;
+    margin-top:10px;
+    display:block;
+    
 }
 .facebook-wrapper {
   height: 200px;
