@@ -75,8 +75,8 @@ h2 {
 .sedas ul li {
   width: 24.2%;
   margin:0.4%;
-  background-color: #aaa;
-  color: #fff;
+  background-color: transparent;
+  color: #e36405;
   height: 170px;
   display: block;
   position: relative;
@@ -92,13 +92,15 @@ h2 {
   margin: 0;
   height:50px;
   padding:10px 4%;
-  background-color: rgba(0, 0, 0, 0.35);
+  color: #000;
   min-height: 0px;
   font-weight: bold;
+  transition: all 0.2s;
 }
 .sedas ul li img {
-  width: 98%;
-  padding:0 1%;
+  width: 90%;
+  padding: 0 1%;
+  margin: 0 auto;
 }
 .sedas ul li:hover {
   opacity: 1;
@@ -107,10 +109,10 @@ h2 {
 .sedas ul li.selected {
   opacity: 1;
   transition: all 0.5s;
-  background-color: #e36405;
 }
-
-
+.sedas ul li.selected p {
+  color: #e36405;
+}
 .slides-container {
   padding-bottom: 40px!important;
   padding-top: 5px!important;
@@ -211,7 +213,7 @@ h2 {
   height: 460px;
 }
 .form-quiz {
-  max-width: 900px;
+  max-width: 1024px;
   margin: 0 auto;
   display: inline-block;
 }
@@ -400,3 +402,25 @@ a.prev {
     top: 42px;
     width: 289%;
 }
+
+
+#slider_sedas_container div {
+  left: 22px!important;
+}
+.sedas ul li#bongs_pipes img {
+  width: 66%;
+}
+.sedas ul li#dont_smoke img {
+  width: 76%;
+}
+#dont_smoke.selected img:first-child  {
+  display: none!important;
+}
+#dont_smoke.selected img:nth-child(2) {
+  display: block;
+}
+#dont_smoke img:nth-child(2) {
+  display: none;
+}
+
+
